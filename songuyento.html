@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let n = prompt("Nhập vào số n: ");
+    n = Number(n);
+
+    function CheckPrimeNumber(val) {
+
+        if (val < 2) {
+            return false;
+        } else {
+            let squareRoot = Math.sqrt(val);
+            for (let i = 2; i <= squareRoot; i++) {
+                if (val % i === 0) {
+                    return false;
+                    break;
+                }
+            }
+            return true;
+        }
+    }
+
+    let cout = 0;
+    let N = 2;
+    while (cout < n) {
+        if (CheckPrimeNumber(N)) {
+            cout++;
+            document.write(N + "  ")
+        }
+        N++;
+    }
+</script>
+</body>
+</html>
