@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <button type="button" onclick="guessTheNumber()">Chơi</button>
+
+    <script>
+        function guessTheNumber() {
+            let inputValue_1 = +prompt("Nhập vào khoảng bạn muốn đoán từ: ");
+            let inputValue_2 = +prompt("Đến:");
+            let inputValue_3;
+            let n = Math.floor(Math.random() * (inputValue_2 - inputValue_1) + inputValue_1);
+            for (let i = 0; i < 3; i++) {
+                inputValue_3 = +prompt("Nhập số bạn đoán:");
+
+                if (inputValue_3 === n) {
+                    alert("Chúc mừng");
+                    return;
+                } else if (inputValue_3 > n){
+                    alert("Số bạn đoán lớn hơn");
+                } else {
+                    alert("Số bạn đoán nhỏ hơn");
+                }
+            }
+            alert("Bạn đã thua cuộc");
+        }
+    </script>
+</body>
+</html>
